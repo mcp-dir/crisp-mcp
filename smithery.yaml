@@ -1,0 +1,34 @@
+# Smithery configuration for Crisp
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_crisp
+
+name: crisp-mcp
+displayName: "Crisp"
+description: >
+  Atendimento ao cliente, chat ao vivo, CRM e helpdesk no Crisp com a REST API oficial v1 completa (api.crisp.chat), conversas e mensagens, contatos/pessoas, base de conhecimento (artigos, categorias, idiomas), campanhas, operadores, visitantes e configurações do site. Consulta e operação. Autenticação por par de tokens (gerado no Crisp, em Settings, Workspace settings, Advanced configuration).
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/crisp-mcp
+repository: https://github.com/mcp-dir/crisp-mcp
+
+tags:
+  - crisp
+  - brazil
+  - support
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_crisp
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_crisp/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.

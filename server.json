@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/crisp-mcp",
+  "title": "Crisp",
+  "description": "Customer support, live chat, CRM and helpdesk on Crisp with the full official REST API v1 (api.crisp",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/crisp-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_crisp"
+    }
+  ]
+}
